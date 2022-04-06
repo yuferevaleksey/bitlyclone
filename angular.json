@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "bit-clone-app": "apps/bit-clone-app",
+    "bit-clone-app-e2e": "apps/bit-clone-app-e2e"
+  }
+}

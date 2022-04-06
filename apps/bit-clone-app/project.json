@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/bit-clone-app",
+  "sourceRoot": "apps/bit-clone-app/src",
+  "prefix": "bit-clone-app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/bit-clone-app",
+        "index": "apps/bit-clone-app/src/index.html",
+        "main": "apps/bit-clone-app/src/main.ts",
+        "polyfills": "apps/bit-clone-app/src/polyfills.ts",
+        "tsConfig": "apps/bit-clone-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/bit-clone-app/src/favicon.ico",
+          "apps/bit-clone-app/src/assets"
+        ],
+        "styles": ["apps/bit-clone-app/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/bit-clone-app/src/environments/environment.ts",
+              "with": "apps/bit-clone-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "bit-clone-app:build:production"
+        },
+        "development": {
+          "browserTarget": "bit-clone-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "bit-clone-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/bit-clone-app/src/**/*.ts",
+          "apps/bit-clone-app/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/bit-clone-app"],
+      "options": {
+        "jestConfig": "apps/bit-clone-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
