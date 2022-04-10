@@ -5,14 +5,15 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
+    "packageManager": "yarn"
   },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*"
+    ".eslintrc.json": "*",
+    ".eslintignore": "*"
   },
   "tasksRunnerOptions": {
     "default": {

@@ -1,0 +1,40 @@
+<ng-container
+  *ngIf="{
+    userLinks: userLinks$ | async,
+    options: selectedLinkStatistic$ | async,
+    newLinkCode: newLinkCode$ | async,
+    selectedCode: selectedLinkCode$ | async
+  } as params"
+>
+  <div class="row link-page__generate-new-link">
+    <div class="row">
+      <div *ngIf="params.newLinkCode">New code:
+        <a [routerLink]="[params.newLinkCode]" [queryParams]="{debug: true}">
+          {{currentLocation}}/{{params.newLinkCode}}
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <bit-clone-app-generate-link-form
+        (submitEvent)="generateShortLink($event)"
+      ></bit-clone-app-generate-link-form>
+    </div>
+  </div>
+
+  <div class="row link-page__user-links">
+    <div class="col col-3">
+      <div class="list-group">
+        <ng-container *ngFor="let link of params.userLinks; trackBy: trackByLinkCode">
+          <a href="#" class="list-group-item list-group-item-action" [class.active]="link.selected" aria-current="true" (click)="selectCode(link.linkCode)">
+            {{currentLocation}}/{{ link.linkCode }}
+          </a>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col">
+      <div *ngIf="params.options">
+        <div echarts [options]="params.options" class="demo-chart"></div>
+      </div>
+    </div>
+  </div>
+</ng-container>

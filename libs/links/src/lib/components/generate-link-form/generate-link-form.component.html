@@ -1,0 +1,10 @@
+<form [formGroup]="generateLinkForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="url">Long Link</label>
+    <input type="text" formControlName="url" class="form-control" [ngClass]="{ 'is-invalid': submitted && formControls.url.errors }" placeholder="Long link past here!"/>
+    <div *ngIf="submitted && formControls.url.errors" class="invalid-feedback">
+      <div *ngIf="formControls.url.errors.required">Url should not be empty.</div>
+    </div>
+    <button class="btn btn-primary">Short It!</button>
+  </div>
+</form>

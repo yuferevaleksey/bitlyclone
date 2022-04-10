@@ -64,7 +64,11 @@
           "browserTarget": "bit-clone-app:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4200,
+        "proxyConfig": "apps/bit-clone-app/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -90,5 +94,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:frontend", "type:app"]
 }

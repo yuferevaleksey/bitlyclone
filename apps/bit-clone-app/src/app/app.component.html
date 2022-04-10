@@ -1,1 +1,17 @@
-<bit-clone-app-nx-welcome></bit-clone-app-nx-welcome>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" >
+  <div class="navbar-nav">
+      <ng-container *ngIf="isAuth; else unauthorizedLinks">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      </ng-container>
+  </div>
+  <ng-template #unauthorizedLinks>
+    <a class="nav-item nav-link" [routerLink]="['/auth/login']">Login</a>
+    <a class="nav-item nav-link" [routerLink]="['/auth/register']">Register</a>
+  </ng-template>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

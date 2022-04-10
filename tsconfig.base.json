@@ -12,9 +12,30 @@
     "module": "esnext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "strictPropertyInitialization": false,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bit-clone-app/api": ["libs/common/generated-api/index.ts"],
+      "@bit-clone-app/api/*": ["libs/common/generated-api/*"],
+      "@bit-clone-app/auth": ["libs/auth/src/index.ts"],
+      "@bit-clone-app/auth/*": ["libs/auth/src/*"],
+      "@bit-clone-app/common": ["libs/common/src/index.ts"],
+      "@bit-clone-app/common/*": ["libs/common/src/*"],
+      "@bit-clone-app/links": ["libs/links/src/index.ts"],
+      "@bit-clone-app/links/*": ["libs/links/src/*"]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": false,
+    "disableTypeScriptVersionCheck": true,
+    "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
+    "strictInputAccessModifiers": true,
+    "strictInjectionParameters": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "annotationsAs": "decorators"
+  },
+  "exclude": ["node_modules", "tmp", "dist"]
 }

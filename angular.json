@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
+    "auth": "libs/auth",
+    "backend-api": "apps/backend/api",
     "bit-clone-app": "apps/bit-clone-app",
-    "bit-clone-app-e2e": "apps/bit-clone-app-e2e"
+    "bit-clone-app-e2e": "apps/bit-clone-app-e2e",
+    "common": "libs/common",
+    "links": "libs/links"
   }
 }

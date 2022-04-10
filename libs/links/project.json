@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/links",
+  "sourceRoot": "libs/links/src",
+  "prefix": "bit-clone-app",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/links"],
+      "options": {
+        "jestConfig": "libs/links/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/links/src/**/*.ts",
+          "libs/links/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
