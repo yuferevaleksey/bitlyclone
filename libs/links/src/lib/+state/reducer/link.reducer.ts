@@ -8,7 +8,6 @@ import {
   mapUserLinks,
   updateSelectedUserLink,
 } from '@bit-clone-app/links/lib/+state/mappers/links.mapper.utils';
-import { setActiveUserLinkCode } from '../actions/links.actions';
 
 export const LINKS_FEATURE_KEY = 'links';
 export interface State extends EntityState<LinksEntity> {
